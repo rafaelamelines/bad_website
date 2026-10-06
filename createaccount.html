@@ -1,0 +1,91 @@
+<style>
+    html {
+        font-family: "Papyrus";
+        background-color:rgb(10, 10, 10);
+        width:110vw;
+        cursor:e-resize;
+    }
+
+    * {
+        user-select:none;
+        word-spacing: -15%;
+        letter-spacing: -8%;
+    }
+
+    :root {
+        touch-action: pan-x pan-y;
+        height: 100%;
+    }
+
+    #green {
+        background-color: green;
+        transform: translateY(100%);
+    }
+
+    #green2 {
+        background-color: green;
+    }
+
+    #brown {
+        background-color: rgb(143, 49, 1);
+    }
+
+    #red {
+        background-color: red;
+        transform: translateY(-100%);
+    }
+</style>
+
+<div style="font-size: large">create account</div>
+don't know what to do? <span id="watch">watch</span> the instructional video.
+
+<div>:)</div>
+<div>:)</div>
+<div>:)</div>
+<div>:)</div>
+<div>:)</div>
+
+<div id="green">Red</div>
+<div id="red">brown</div>
+<div id="brown">Green</div>
+<div id="green2">Green</div>
+
+<script>
+    let b = false, n = false, e = false;
+    let bloodtype, nam, email;
+
+    document.getElementById("green").addEventListener("click", () => {
+        bloodtype = prompt("Green button 1");
+        console.log(bloodtype);
+        b = true;
+    });
+
+    document.getElementById("red").addEventListener("click", () => {
+        if (b) {
+            nam = prompt("Red button");
+            console.log(nam);
+            n = true;
+        }
+    });
+
+    document.getElementById("brown").addEventListener("click", () => {
+        if (n) {
+            email = prompt("Brown button");
+            console.log(email);
+            e = true;
+        }
+    });
+
+    document.getElementById("green2").addEventListener("click", () => {
+        if (e) {
+            if (confirm("Green button 2")) {
+                alert(`You have successfully created an account.\nName: ${bloodtype}\nBlood type: ${email}\nEmail address: ${nam}`);
+            }
+        }
+    });
+
+    document.getElementById("watch").addEventListener("click", () => {
+        location.href = "instructions.html";
+    });
+
+</script>

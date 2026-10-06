@@ -1,0 +1,28 @@
+<style>
+    html {
+        font-family: "Papyrus";
+        background-color:rgb(10, 10, 10);
+        width:110vw;
+        cursor:e-resize;
+    }
+
+    * {
+        user-select:none;
+        word-spacing: -15%;
+        letter-spacing: -8%;
+    }
+
+    :root {
+        touch-action: pan-x pan-y;
+        height: 100%;
+    }
+</style>
+
+<div style="font-size: large">about</div>
+lol there's nothing here. <span>go back?</span>
+
+<script>
+    document.querySelector("span").addEventListener("click", () => {
+        alert("Sorry, can't take you back.");
+    })
+</script>

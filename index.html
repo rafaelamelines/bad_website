@@ -1,0 +1,164 @@
+<title>Bad Website</title>
+
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+<style>
+    html {
+        font-family: "Papyrus";
+        background-color:rgb(10, 10, 10);
+        width:110vw;
+        cursor:e-resize;
+    }
+
+    * {
+        user-select:none;
+        word-spacing: -15%;
+        letter-spacing: -8%;
+    }
+
+    :root {
+        touch-action: pan-x pan-y;
+        height: 100%;
+    }
+
+    .circle {
+        position:fixed;
+        background-color: rgba(24, 33, 42, 0.2);
+        height:50px;
+        width:50px;
+        top:-25px;
+        bottom:0;
+        left:-25px;
+        right:0;
+        border-radius:100%;
+    }
+
+    #red {
+        background-color: red;
+        margin: 2px;
+        opacity: 0.1;
+    }
+
+    #green {
+        background-color: #14A500;
+        margin: 2px;
+        opacity: 0.1;
+    }
+
+    #yellowish-green {
+        background-color: #79940D;
+        margin: 2px;
+        opacity: 0.1;
+    }
+
+    #title {
+        animation: spin 2s infinite;
+        width: 200px;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0); }
+        100% { transform: rotate(360deg); }
+    }
+</style>
+<div id="title" style="font-size:xx-large;cursor:not-allowed">Bad Website</div>
+Here at Bad Website, we pride ourselves on our bad web design, specifically focussing on the user experience. If you want to learn more about this, you can
+<span id="about"><span style="margin: -4px;">visit</span></span>
+our about page by clicking<button id="notabout" tabindex="0" style="font-family: inherit; padding:0;font-size:inherit; background-color: transparent; border: none;"> the button to visit the about page</button>.
+Can't see your cursor? You're not moving it fast enough; we believe that only people w/ super fast mouse movement skills deserve a cursor.
+This page is procurable in various distinct lexica;
+one should winnow the widget congruous with one's preference
+in order to metamorphose the content of this web page
+to that of the tongue that one yearns for.
+We have <span id="vietnamese">Arabic</span>, <span id="mandarin">Vietnamese</span> and <span id="arabic">Mandarin</span>.
+Press the green button for Mandarin, the red button for Vietnamese, and the yellowish-green button for Arabic.
+<span id="red">.</span>
+<span id="green">.</span>
+<span id="yellowish-green">.</span>
+Did you know you can create a free account with us for free?
+Just click the account-creating button.
+<span id="create-account" style="width: 20px;height:10px; display:inline-block;"></span>
+Were you happy with your experience on Bad Website?
+I hope not, but you should fill out the feedback <span id="happy">form</span> anyway that can be accessed using a button.
+Not happy? Fill out <span id="not-happy">this</span> feedback form instead.
+You can sign in <span id="signin">here</span>.
+
+<script>
+    var previousX = 0;
+    document.addEventListener("mousemove", ev => {
+        if (ev.x - previousX > 4) {
+            document.querySelector("html").style.cursor = "cell";
+        } else if (ev.x - previousX > 2) {
+            document.querySelector("html").style.cursor = "crosshair";
+        } else {
+            document.querySelector("html").style.cursor = "none";
+        }
+
+        previousX = ev.x;
+
+        const circle = document.createElement("div");
+        circle.classList.add("circle");
+        circle.style.transform = `translate(${ev.x + 30 * (Math.random() - 0.5)}px, ${ev.y + 30 * (Math.random() - 0.5)}px)`;
+        setTimeout(() => {
+            circle.remove();
+        }, 300);
+        document.body.appendChild(circle);
+    });
+
+    document.getElementById("about").addEventListener("click", () => {
+        location.href = "about.html";
+    });
+
+    document.getElementById("notabout").addEventListener("click", () => {
+        alert("Oops! Wrong button");
+        document.body.style.transform = "rotate(90deg)";
+    });
+
+    document.getElementById("vietnamese").addEventListener("click", () => {
+        document.body.innerHTML = "Bad Website T?i Bad Website, ch£ng t“i t? h…o v? phong c ch thi?t k? web t? c?a mnh, ??c bi?t ch£ tr?ng v…o tr?i nghi?m ng??i d—ng. N?u mu?n tm hi?u thˆm, b?n c¢ th? gh‚ th?m trang gi?i thi?u b?ng c ch nh?p v…o n£t t??ng ?ng. B?n kh“ng th?y con tr? chu?t ?ƒu ?? L… do b?n di chuy?n ch?a ?? nhanh ??y; ch£ng t“i tin r?ng ch? nh?ng ai c¢ k? n?ng di chu?t siˆu t?c m?i x?ng ? ng s? h?u con tr?. Trang n…y h? tr? nhi?u ng“n ng? kh c nhau; h?y nh?p v…o n£t th¡ch h?p ?? d?ch n?i dung. Ch£ng t“i c¢ h? tr? ti?ng ? R?p, ti?ng Vi?t v… ti?ng Quan Tho?i."
+    });
+
+    document.getElementById("arabic").addEventListener("click", () => {
+        document.body.innerHTML = `موقع سيء (Bad Website)نحن هنا في "موقع سيء" (Bad Website) نفتخر بتصميمنا السيء للموقع، مع التركيز بشكل خاص على تجربة المستخدم. إذا كنت ترغب في معرفة المزيد حول هذا الأمر، يمكنك زيارة صفحة "نبذة عنا" من خلال النقر على الزر المخصص لذلك. ألا ترى مؤشر الفأرة؟ هذا لأنك لا تحركه بالسرعة الكافية؛ فنحن نؤمن بأن الأشخاص الذين يتمتعون بمهارات فائقة السرعة في تحريك الفأرة هم فقط من يستحقون رؤية المؤشر. هذه الصفحة متاحة بعدة لغات؛ انقر على الزر المناسب للترجمة. اللغات المتاحة لدينا هي: العربية، والفيتنامية، والماندرين.`
+    });
+
+    document.getElementById("mandarin").addEventListener("click", () => {
+        document.body.innerHTML = "Bad Website(????) ? Bad Website,????????????,?????????????????????,???????????“??”??????????????????;????,????????????????????????????????,???????????????????????????????"
+    });
+
+    document.getElementById("red").addEventListener("click", () => {
+        document.body.innerHTML = "Bad Website(????) ? Bad Website,????????????,?????????????????????,???????????“??”??????????????????;????,????????????????????????????????,???????????????????????????????"
+    });
+
+    document.getElementById("green").addEventListener("click", () => {
+        document.body.innerHTML = `موقع سيء (Bad Website)نحن هنا في "موقع سيء" (Bad Website) نفتخر بتصميمنا السيء للموقع، مع التركيز بشكل خاص على تجربة المستخدم. إذا كنت ترغب في معرفة المزيد حول هذا الأمر، يمكنك زيارة صفحة "نبذة عنا" من خلال النقر على الزر المخصص لذلك. ألا ترى مؤشر الفأرة؟ هذا لأنك لا تحركه بالسرعة الكافية؛ فنحن نؤمن بأن الأشخاص الذين يتمتعون بمهارات فائقة السرعة في تحريك الفأرة هم فقط من يستحقون رؤية المؤشر. هذه الصفحة متاحة بعدة لغات؛ انقر على الزر المناسب للترجمة. اللغات المتاحة لدينا هي: العربية، والفيتنامية، والماندرين.`
+    });
+
+    document.getElementById("yellowish-green").addEventListener("click", () => {
+        document.body.innerHTML = "Bad Website T?i Bad Website, ch£ng t“i t? h…o v? phong c ch thi?t k? web t? c?a mnh, ??c bi?t ch£ tr?ng v…o tr?i nghi?m ng??i d—ng. N?u mu?n tm hi?u thˆm, b?n c¢ th? gh‚ th?m trang gi?i thi?u b?ng c ch nh?p v…o n£t t??ng ?ng. B?n kh“ng th?y con tr? chu?t ?ƒu ?? L… do b?n di chuy?n ch?a ?? nhanh ??y; ch£ng t“i tin r?ng ch? nh?ng ai c¢ k? n?ng di chu?t siˆu t?c m?i x?ng ? ng s? h?u con tr?. Trang n…y h? tr? nhi?u ng“n ng? kh c nhau; h?y nh?p v…o n£t th¡ch h?p ?? d?ch n?i dung. Ch£ng t“i c¢ h? tr? ti?ng ? R?p, ti?ng Vi?t v… ti?ng Quan Tho?i."
+    });
+
+    // keyboard trap
+    document.addEventListener("keydown", ev => {
+        if (ev.code == 'Tab') {
+            console.log("you're stuck now loser");
+            ev.preventDefault();
+            document.getElementById("notabout").focus();
+        }
+    });
+
+    document.getElementById("happy").addEventListener("click", () => {
+        location.href = "happy.html";
+    });
+
+    document.getElementById("not-happy").addEventListener("click", () => {
+        location.href = "unhappy.html";
+    });
+
+    document.getElementById("create-account").addEventListener("click", () => {
+        location.href = "createaccount.html";
+    });
+
+    document.getElementById("signin").addEventListener("click", () => {
+        location.href = "https://jobcannon.io/tests/iq-test";
+    });
+</script>

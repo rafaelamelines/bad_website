@@ -1,0 +1,55 @@
+<style>
+    html {
+        font-family: "Papyrus";
+        /*background-color:rgb(10, 10, 10);*/
+        width:110vw;
+        cursor:e-resize;
+    }
+
+    * {
+        user-select:none;
+        word-spacing: -15%;
+        letter-spacing: -8%;
+    }
+
+    :root {
+        touch-action: pan-x pan-y;
+        height: 100%;
+    }
+
+    #b1 {
+        transform: translateY(100%);
+        width: 200px;
+        transition: all 500ms;
+    }
+
+    #b1:hover {
+        transform: translateX(200%);
+    }
+
+    #b2 {
+        transform: translateY(-100%);
+        width: 200px;
+    }
+</style>
+<div style="font-size: large">Feedback form</div>
+
+Press the button on the top to enter your feedback, and the button on the bottom to submit.
+
+<div id="b1">Button 1</div>
+<div id="b2">Button 2</div>
+
+<script>
+    setTimeout(() => {
+        alert("Timed out!");
+        location.href = "index.html";
+    }, 10000);
+
+    document.getElementById("b1").addEventListener("click", () => {
+        alert("Feedback submitted");
+    })
+
+    document.getElementById("b2").addEventListener("click", () => {
+        let x = prompt("feedback?");
+    })
+</script>
